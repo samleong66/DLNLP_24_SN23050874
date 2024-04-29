@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import nltk
+import nltk, logging
 from itertools import chain
 from collections import Counter
 from . import preProcessing
@@ -126,6 +126,7 @@ def report_CRF(y_true, y_pred):
 def print_transitions(trans_features):
     for (label_from, label_to), weight in trans_features:
         print("%-6s -> %-7s %0.6f" % (label_from, label_to, weight))
+        logging.info("%-6s -> %-7s %0.6f" % (label_from, label_to, weight))
         
 def print_state_features(state_features):
     for (attr, label), weight in state_features:
@@ -202,8 +203,10 @@ def semEvalValidate(pred_offsets,true_offsets, b=1):
         f1 = (1 + (b ** 2)) * p * r / ((p * b ** 2) + r) if p > 0 and r > 0 else 0.
         print('P = %f -- R = %f -- F1 = %f (#correct: %d, #retrieved: %d, #relevant: %d)' %
               (p,r,f1,common,retrieved,relevant))
+        logging.info('P = %f -- R = %f -- F1 = %f (#correct: %d, #retrieved: %d, #relevant: %d)' %
+              (p,r,f1,common,retrieved,relevant))
     
-def evaluate(detail=False,d_type='re'): 
+def evaluate(detail=True,d_type='re'): 
     if d_type=='re':
         d_name='Restaurants'
     else:
@@ -234,18 +237,24 @@ def evaluate(detail=False,d_type='re'):
     predict_Y,tagger=tag_CRF(test_X)
     report=report_CRF(test_Y,predict_Y)
     print('\n--------Results based on BIO---------')
+    logging.info("--------Results based on BIO---------")
+    logging.info(report)
     print(report)
     
     if detail==True:
         print('\n--------Other information based on BIO---------')
         info=tagger.info()  
         print("The most likely state transition:")
+        logging.info("The most likely state transition:")
         print_transitions(Counter(info.transitions).most_common(10))
         print("\nThe least likely state transition:")
+        logging.info("The least likely state transition:")
         print_transitions(Counter(info.transitions).most_common()[-10:])
         print("\nThe strongest feature correlation:")
+        logging.info("The strongest feature correlation:")
         print_state_features(Counter(info.state_features).most_common(10))
         print("\nThe weakest feature correlation:")
+        logging.info("The weakest feature correlation:")
         print_state_features(Counter(info.state_features).most_common()[-10:])
     
     all_terms=[]
@@ -256,6 +265,7 @@ def evaluate(detail=False,d_type='re'):
         all_offsets.append(getOffestFromText(all_terms[i],origin_text_test[i]))
         
     print('\n--------SemEval Report---------')
+    logging.info('--------SemEval Report---------')
     semEvalValidate(all_offsets,true_offsets, b=1)
     
     return all_terms,all_offsets,origin_text_test,true_offsets

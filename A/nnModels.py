@@ -1,3 +1,4 @@
+import logging
 import os
 import torch
 import torch.nn as nn
@@ -100,6 +101,7 @@ def trainNNforABSA(model, dataloader, device, epochs=100):
             optimizer.zero_grad()
             outputs = model(inputs)
             loss = criterion(outputs, label)
+            logging.info(f"Epoch: {i}, training loss: {loss}")
             losses.append(loss.item())
             running_loss += loss.item()
             loss.backward()
@@ -196,6 +198,7 @@ def examByNN(d_type: str, model_name: str, per=0.8, epochs=100):
     train_dataset = create_dataloader(trainX, trainY, model_name)
     test_dataset = create_dataloader(testX, testY, model_name)
     if not os.path.exists(model_path):
+        logging.info(f"Start training {model_name}")
         model, loss = trainNNforABSA(model, train_dataset, device, epochs)
         torch.save(model.state_dict(), model_path)
     else:
@@ -206,7 +209,10 @@ def examByNN(d_type: str, model_name: str, per=0.8, epochs=100):
 
     print("Classification Results:")
     print("Gross Accuracy: %.4f%%"%gross_acc)
+    logging.info("Classification results by %s"%model_name)
+    logging.info("Gross Accuracy: %.4f%%"%gross_acc)
     for label in label_acc:
+        logging.info(f'Accuracy for label {list(label_mapping.keys())[label]}: {label_acc[label]:.2f}%')
         print(f'Accuracy for label {list(label_mapping.keys())[label]}: {label_acc[label]:.2f}%')
 
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 import os
 import pickle
 import numpy as np
@@ -74,6 +75,7 @@ def predictByML(testX,testY,clf):
     pre_result=testY
     
     print('Classification Results: \n')
+    logging.info(classification_report(true_result, pre_result,digits=4))
     print(classification_report(true_result, pre_result,digits=4))
     
     clf.score(testX,testY)
@@ -96,6 +98,7 @@ def examByML(d_type='re',classifier='SVM',per=0.8):
         print("Use pretrained model")
         with open(model_path, 'rb') as f:
             clf = pickle.load(f)
+        logging.info("Classification results by %s"%classifier)
         predictByML(testX,testY,clf)
 
 

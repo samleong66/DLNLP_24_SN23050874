@@ -1,16 +1,7 @@
 import torch
-# import time
-# import numpy as np
 import pandas as pd
-# import torch.nn as nn
-# from tqdm import tqdm
-# from transformers import BertModel
-# from transformers import BertTokenizer
-# from sklearn.model_selection import train_test_split
-# from transformers import AdamW, get_linear_schedule_with_warmup
-# from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
-# from A.singleAspect import BertClassifier, initialize_model, preprocessing_for_bert, train 
-
+import datetime
+import logging
 from A.preProcessing import *
 from A.word2vecProcessing import trainingEmbedding, createCluster
 from A.exam_CRF import evaluate
@@ -22,6 +13,11 @@ from A.preparation import get_parser
 import os, sys
 JAVA_HOME = r"D:\Program Files\Java\jdk-22\bin\java.exe"
 os.environ.setdefault('JAVA_HOME', JAVA_HOME)
+
+current_time = datetime.datetime.now().strftime("%m%d%H%M")
+log_name = os.path.join("B/logging", f"{current_time}.log")
+logging.basicConfig(filename=log_name, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 if __name__ == '__main__':
 

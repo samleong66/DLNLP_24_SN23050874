@@ -76,7 +76,7 @@ def cutFileForBIO(filename,threshold=0.8,shuffle=False,d_type='re'):
     return train_X,train_Y,test_X,test_Y,true_offset,origin_text
     
 # Read additional data and convert to CSV file
-def transformJSONFiles(d_type='re',all_text=False,text_num=150000):
+def transformJSONFiles(d_type='re',all_text=False):
     if d_type=='re':
         filepath=r'Dataset\extra\yelp\yelp_academic_dataset_review.json'
         outpath=r'Dataset\extra\yelp\Restaurants_Raw.csv'
@@ -97,7 +97,7 @@ def transformJSONFiles(d_type='re',all_text=False,text_num=150000):
             items_list=f.readlines()
 
             if all_text==False:
-                items_list=items_list[:text_num]
+                items_list=items_list[:150000]
 
             with tqdm(total=len(items_list), desc='Transforming extra data for Restaurant') as pbar:
                 for item in items_list:
@@ -109,7 +109,7 @@ def transformJSONFiles(d_type='re',all_text=False,text_num=150000):
         with open(filepath,'r') as f:
             items_list=f.readlines()
 
-            with tqdm(total=text_num, desc='Transforming extra data for Labtop') as pbar:
+            with tqdm(total=90000, desc='Transforming extra data for Labtop') as pbar:
                 for item in items_list:
                     json_dict=json.loads(item)
                     words=nltk.word_tokenize(json_dict[text_item])
@@ -118,7 +118,7 @@ def transformJSONFiles(d_type='re',all_text=False,text_num=150000):
                         review_list.append(' '.join(words))
                         count += 1
                         pbar.update(1)
-                        if all_text==False and count > text_num:
+                        if all_text==False and count > 90000:
                             break
                     
             

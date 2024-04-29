@@ -8,7 +8,6 @@ import pickle
 import pandas
 from tqdm import tqdm
 
-logging.basicConfig(format='%(asctime)s:%(levelname)s:%(message)s',level=logging.INFO)
 
 # Training for word2vec
 def trainingForWords(texts,fnum,filepath,sg,hs):
@@ -21,7 +20,7 @@ def trainingForWords(texts,fnum,filepath,sg,hs):
     num_workers=8 # Number of threads, set to 1 if random seeds needed
     context=10 # Window size
     downsampling=1e-3 # downsampling scale
-    num_iter=15 # number of iteration
+    num_iter=50 # number of iteration
     hs=hs
     sg=sg # If skip-gram model needed
     
@@ -72,9 +71,9 @@ def trainingEmbedding(vector_len=150,d_type='re',add_extra=False):
         del extra_csv
         del extra_texts
     
-    print('Saving WordEmbedding')
+    print('Training WordEmbedding')
     trainingForWords(texts,vector_len,'B/model/%s.w2v'%d_name,1,0)
-    print('Saving WordEmbedding_CBOW')
+    print('Training WordEmbedding_CBOW')
     trainingForWords(texts,vector_len,'B/model/%s.w2v_cbow'%d_name,0,0)
     
    
