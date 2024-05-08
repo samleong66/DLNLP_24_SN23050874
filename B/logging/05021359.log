@@ -1,0 +1,36 @@
+2024-05-02 13:59:26,547 - INFO - loading Word2Vec object from B/model/Restaurants.w2v_cbow
+2024-05-02 13:59:26,552 - INFO - loading wv recursively from B/model/Restaurants.w2v_cbow.wv.* with mmap=None
+2024-05-02 13:59:26,552 - INFO - loading vectors from B/model/Restaurants.w2v_cbow.wv.vectors.npy with mmap=None
+2024-05-02 13:59:26,570 - INFO - loading syn1neg from B/model/Restaurants.w2v_cbow.syn1neg.npy with mmap=None
+2024-05-02 13:59:26,585 - INFO - setting ignored attribute cum_table to None
+2024-05-02 13:59:26,729 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v_cbow', 'datetime': '2024-05-02T13:59:26.725505', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 13:59:27,014 - INFO - Classification results by LR
+2024-05-02 13:59:27,022 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.0000    0.0000    0.0000         0
+    negative     0.3200    0.2222    0.2623       216
+     neutral     0.0087    0.2000    0.0167         5
+    positive     0.7254    0.6286    0.6736       517
+
+    accuracy                         0.5068       738
+   macro avg     0.2635    0.2627    0.2381       738
+weighted avg     0.6019    0.5068    0.5487       738
+
+2024-05-02 13:59:52,912 - INFO - loading Word2Vec object from B/model/Restaurants.w2v
+2024-05-02 13:59:52,918 - INFO - loading wv recursively from B/model/Restaurants.w2v.wv.* with mmap=None
+2024-05-02 13:59:52,918 - INFO - loading vectors from B/model/Restaurants.w2v.wv.vectors.npy with mmap=None
+2024-05-02 13:59:52,932 - INFO - loading syn1neg from B/model/Restaurants.w2v.syn1neg.npy with mmap=None
+2024-05-02 13:59:52,946 - INFO - setting ignored attribute cum_table to None
+2024-05-02 13:59:53,089 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v', 'datetime': '2024-05-02T13:59:53.085229', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 13:59:53,372 - INFO - Classification results by LR
+2024-05-02 13:59:53,381 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.0000    0.0000    0.0000         0
+    negative     0.5400    0.5827    0.5606       139
+     neutral     0.2261    0.4906    0.3095        53
+    positive     0.9353    0.7674    0.8431       546
+
+    accuracy                         0.7127       738
+   macro avg     0.4253    0.4602    0.4283       738
+weighted avg     0.8099    0.7127    0.7515       738
+

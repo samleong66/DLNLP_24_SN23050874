@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 #用于上下文获取
 #获取句法特征信息
+import logging
+import os
 import nltk
 import re
 import pickle
@@ -9,12 +11,12 @@ from . import entity
 import random
 
 class AspectContext:
-    def __init__(self,t_words=[],pol='',context=[],lemm_contex=[],
+    def __init__(self,t_words=[],pol='',context=[],lemm_context=[],
                  wp_context=[],dep_context=[],context_num=5):
         self.t_words=t_words
         self.pol=pol
         self.context=context
-        self.lemm_context=lemm_contex
+        self.lemm_context=lemm_context
         self.wp_context=wp_context
         self.dep_context=dep_context
         self.isvalid=True
@@ -150,6 +152,11 @@ def createAllForPol(d_type='re',context=5):
         inputpath='Dataset/semeval14/Laptops_Train_v2.xml'
         deppath='B/dependences/lp_train.dep'
         outpath='B/contextFiles/lp_train.cox'
+
+    if os.path.exists(outpath):
+        print("feature file already exist")
+        logging.info("feature file already exist")
+        return
         
     createFeatureFileForPol(inputpath,deppath,outpath,context,d_type) 
     

@@ -46,7 +46,7 @@ def getFeaturesAndPolsFromFile(filepath,d_type='re',per=0.8):
     train_data,test_data=contextProcessing.splitContextFile(filepath,per)
     print('Loading dataset...')
     W2V=word2vecProcessing.loadForWord('B/model/%s.w2v'%d_name)
-    
+
     trainX,trainY=getInfoFromList(train_data,W2V)
     testX,testY=getInfoFromList(test_data,W2V)
     

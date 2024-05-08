@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 from . import preProcessing
 from . import entity
 import logging
@@ -49,6 +50,14 @@ def trainingEmbedding(vector_len=150,d_type='re',add_extra=False):
     else:
         d_name='LapTops'
         extraFile='Dataset/extra/amzon/LapTops_Raw.csv'
+
+    w2v_file = 'B/model/%s.w2v'%d_name
+    w2v_c_file = 'B/model/%s.w2v_cbow'%d_name
+    if os.path.exists(w2v_file) and os.path.exists(w2v_c_file):
+        print("w2v files already exist")
+        logging.info("w2v files already exist")
+        return
+    
     
     print('------Training the Word2Vec of %s Data------'%d_name)
     train_corpus=preProcessing.loadXML('Dataset/semeval14/%s_Train_v2.xml'%d_name)
@@ -72,9 +81,9 @@ def trainingEmbedding(vector_len=150,d_type='re',add_extra=False):
         del extra_texts
     
     print('Training WordEmbedding')
-    trainingForWords(texts,vector_len,'B/model/%s.w2v'%d_name,1,0)
+    trainingForWords(texts,vector_len,w2v_file,1,0)
     print('Training WordEmbedding_CBOW')
-    trainingForWords(texts,vector_len,'B/model/%s.w2v_cbow'%d_name,0,0)
+    trainingForWords(texts,vector_len,w2v_c_file,0,0)
     
    
 # Create cluster for w2v
@@ -97,12 +106,17 @@ def loadDict(dictpath):
     return dict_re
     
 def createCluster(cluster_num=10,d_type='re'):
+    w2v_cluster_file = 'B/cluster/%s_w2v.pkl'%d_type
+    w2v_c_cluster_file = 'B/cluster/%s_w2v_c.pkl'%d_type
+    if os.path.exists(w2v_c_cluster_file) and os.path.exists(w2v_cluster_file):
+        print("clusters files already exist")
+        logging.info("clusters files already exist")
     if d_type=='re':
         d_name='Restaurants'
     else:
         d_name='LapTops'
             
     print('Create cluster for w2v')
-    kmeansClusterForW2V('B/model/%s.w2v'%d_name,'B/cluster/%s_w2v.pkl'%d_type,cluster_num)
+    kmeansClusterForW2V('B/model/%s.w2v'%d_name,w2v_cluster_file,cluster_num)
     print('Create cluster for w2v_cbow')
-    kmeansClusterForW2V('B/model/%s.w2v_cbow'%d_name,'B/cluster/%s_w2v_c.pkl'%d_type,cluster_num)
+    kmeansClusterForW2V('B/model/%s.w2v_cbow'%d_name,w2v_c_cluster_file,cluster_num)

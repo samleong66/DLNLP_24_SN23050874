@@ -1,0 +1,212 @@
+2024-05-02 14:15:46,736 - INFO - w2v files already exist
+2024-05-02 14:15:46,736 - INFO - clusters files already exist
+2024-05-02 14:15:46,736 - INFO - loading Word2Vec object from B/model/Restaurants.w2v
+2024-05-02 14:15:46,742 - INFO - loading wv recursively from B/model/Restaurants.w2v.wv.* with mmap=None
+2024-05-02 14:15:46,742 - INFO - loading vectors from B/model/Restaurants.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:15:46,756 - INFO - loading syn1neg from B/model/Restaurants.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:15:46,771 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:15:46,912 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v', 'datetime': '2024-05-02T14:15:46.907283', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:15:49,498 - INFO - loading Word2Vec object from B/model/Restaurants.w2v_cbow
+2024-05-02 14:15:49,507 - INFO - loading wv recursively from B/model/Restaurants.w2v_cbow.wv.* with mmap=None
+2024-05-02 14:15:49,507 - INFO - loading vectors from B/model/Restaurants.w2v_cbow.wv.vectors.npy with mmap=None
+2024-05-02 14:15:49,521 - INFO - loading syn1neg from B/model/Restaurants.w2v_cbow.syn1neg.npy with mmap=None
+2024-05-02 14:15:49,535 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:15:49,676 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v_cbow', 'datetime': '2024-05-02T14:15:49.676646', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:15:53,140 - INFO - w2v files already exist
+2024-05-02 14:15:53,140 - INFO - clusters files already exist
+2024-05-02 14:15:53,141 - INFO - loading Word2Vec object from B/model/LapTops.w2v
+2024-05-02 14:15:53,152 - INFO - loading wv recursively from B/model/LapTops.w2v.wv.* with mmap=None
+2024-05-02 14:15:53,152 - INFO - loading vectors from B/model/LapTops.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:15:53,170 - INFO - loading syn1neg from B/model/LapTops.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:15:53,190 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:15:53,378 - INFO - Word2Vec lifecycle event {'fname': 'B/model/LapTops.w2v', 'datetime': '2024-05-02T14:15:53.378216', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:15:59,240 - INFO - loading Word2Vec object from B/model/LapTops.w2v_cbow
+2024-05-02 14:15:59,249 - INFO - loading wv recursively from B/model/LapTops.w2v_cbow.wv.* with mmap=None
+2024-05-02 14:15:59,250 - INFO - loading vectors from B/model/LapTops.w2v_cbow.wv.vectors.npy with mmap=None
+2024-05-02 14:15:59,270 - INFO - loading syn1neg from B/model/LapTops.w2v_cbow.syn1neg.npy with mmap=None
+2024-05-02 14:15:59,290 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:15:59,491 - INFO - Word2Vec lifecycle event {'fname': 'B/model/LapTops.w2v_cbow', 'datetime': '2024-05-02T14:15:59.491151', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:12,972 - INFO - --------Results based on BIO---------
+2024-05-02 14:16:12,972 - INFO -               precision    recall  f1-score   support
+
+           I     0.8606    0.6679    0.7521       527
+           B     0.8871    0.8353    0.8604      1129
+
+   micro avg     0.8798    0.7820    0.8280      1656
+   macro avg     0.8739    0.7516    0.8063      1656
+weighted avg     0.8787    0.7820    0.8259      1656
+ samples avg     0.1026    0.1026    0.1026      1656
+
+2024-05-02 14:16:13,021 - INFO - --------SemEval Report---------
+2024-05-02 14:16:13,022 - INFO - P = 0.847682 -- R = 0.790123 -- F1 = 0.817891 (#correct: 896, #retrieved: 1057, #relevant: 1134)
+2024-05-02 14:16:20,685 - INFO - --------Results based on BIO---------
+2024-05-02 14:16:20,685 - INFO -               precision    recall  f1-score   support
+
+           I     0.9039    0.5962    0.7185       426
+           B     0.8885    0.7028    0.7848       646
+
+   micro avg     0.8939    0.6604    0.7597      1072
+   macro avg     0.8962    0.6495    0.7517      1072
+weighted avg     0.8946    0.6604    0.7585      1072
+ samples avg     0.0600    0.0600    0.0600      1072
+
+2024-05-02 14:16:20,735 - INFO - --------SemEval Report---------
+2024-05-02 14:16:20,735 - INFO - P = 0.837624 -- R = 0.646789 -- F1 = 0.729940 (#correct: 423, #retrieved: 505, #relevant: 654)
+2024-05-02 14:16:20,763 - INFO - feature file already exist
+2024-05-02 14:16:20,763 - INFO - feature file already exist
+2024-05-02 14:16:20,778 - INFO - loading Word2Vec object from B/model/Restaurants.w2v
+2024-05-02 14:16:20,785 - INFO - loading wv recursively from B/model/Restaurants.w2v.wv.* with mmap=None
+2024-05-02 14:16:20,785 - INFO - loading vectors from B/model/Restaurants.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:20,801 - INFO - loading syn1neg from B/model/Restaurants.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:20,815 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:20,969 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v', 'datetime': '2024-05-02T14:16:20.969479', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:21,254 - INFO - Classification results by LR
+2024-05-02 14:16:21,262 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.0000    0.0000    0.0000         0
+    negative     0.5400    0.5827    0.5606       139
+     neutral     0.2261    0.4906    0.3095        53
+    positive     0.9353    0.7674    0.8431       546
+
+    accuracy                         0.7127       738
+   macro avg     0.4253    0.4602    0.4283       738
+weighted avg     0.8099    0.7127    0.7515       738
+
+2024-05-02 14:16:21,282 - INFO - loading Word2Vec object from B/model/LapTops.w2v
+2024-05-02 14:16:21,291 - INFO - loading wv recursively from B/model/LapTops.w2v.wv.* with mmap=None
+2024-05-02 14:16:21,291 - INFO - loading vectors from B/model/LapTops.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:21,311 - INFO - loading syn1neg from B/model/LapTops.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:21,329 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:21,518 - INFO - Word2Vec lifecycle event {'fname': 'B/model/LapTops.w2v', 'datetime': '2024-05-02T14:16:21.518316', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:21,697 - INFO - Classification results by LR
+2024-05-02 14:16:21,704 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.0000    0.0000    0.0000         0
+    negative     0.9394    0.3605    0.5210       430
+     neutral     0.1075    0.2703    0.1538        37
+    positive     0.0000    0.0000    0.0000         2
+
+    accuracy                         0.3518       469
+   macro avg     0.2617    0.1577    0.1687       469
+weighted avg     0.8698    0.3518    0.4898       469
+
+2024-05-02 14:16:21,725 - INFO - loading Word2Vec object from B/model/Restaurants.w2v
+2024-05-02 14:16:21,732 - INFO - loading wv recursively from B/model/Restaurants.w2v.wv.* with mmap=None
+2024-05-02 14:16:21,732 - INFO - loading vectors from B/model/Restaurants.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:21,748 - INFO - loading syn1neg from B/model/Restaurants.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:21,769 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:21,915 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v', 'datetime': '2024-05-02T14:16:21.915381', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:22,299 - INFO - Classification results by SVM
+2024-05-02 14:16:22,305 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.0400    1.0000    0.0769         1
+    negative     0.6000    0.5769    0.5882       156
+     neutral     0.2696    0.4306    0.3316        72
+    positive     0.9040    0.7957    0.8464       509
+
+    accuracy                         0.7141       738
+   macro avg     0.4534    0.7008    0.4608       738
+weighted avg     0.7767    0.7141    0.7406       738
+
+2024-05-02 14:16:22,323 - INFO - loading Word2Vec object from B/model/LapTops.w2v
+2024-05-02 14:16:22,333 - INFO - loading wv recursively from B/model/LapTops.w2v.wv.* with mmap=None
+2024-05-02 14:16:22,333 - INFO - loading vectors from B/model/LapTops.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:22,352 - INFO - loading syn1neg from B/model/LapTops.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:22,371 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:22,557 - INFO - Word2Vec lifecycle event {'fname': 'B/model/LapTops.w2v', 'datetime': '2024-05-02T14:16:22.557454', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:22,739 - INFO - Classification results by SVM
+2024-05-02 14:16:22,746 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.0000    0.0000    0.0000         0
+    negative     0.8121    0.3499    0.4891       383
+     neutral     0.1398    0.1733    0.1548        75
+    positive     0.0099    0.1818    0.0188        11
+
+    accuracy                         0.3177       469
+   macro avg     0.2405    0.1763    0.1656       469
+weighted avg     0.6858    0.3177    0.4246       469
+
+2024-05-02 14:16:22,769 - INFO - loading Word2Vec object from B/model/Restaurants.w2v
+2024-05-02 14:16:22,776 - INFO - loading wv recursively from B/model/Restaurants.w2v.wv.* with mmap=None
+2024-05-02 14:16:22,776 - INFO - loading vectors from B/model/Restaurants.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:22,791 - INFO - loading syn1neg from B/model/Restaurants.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:22,806 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:22,946 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v', 'datetime': '2024-05-02T14:16:22.946748', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:23,243 - INFO - Classification results by MLP
+2024-05-02 14:16:23,255 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.0800    0.2222    0.1176         9
+    negative     0.5933    0.5298    0.5597       168
+     neutral     0.4261    0.4537    0.4395       108
+    positive     0.8438    0.8344    0.8391       453
+
+    accuracy                         0.7019       738
+   macro avg     0.4858    0.5100    0.4890       738
+weighted avg     0.7163    0.7019    0.7082       738
+
+2024-05-02 14:16:23,278 - INFO - loading Word2Vec object from B/model/LapTops.w2v
+2024-05-02 14:16:23,287 - INFO - loading wv recursively from B/model/LapTops.w2v.wv.* with mmap=None
+2024-05-02 14:16:23,287 - INFO - loading vectors from B/model/LapTops.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:23,306 - INFO - loading syn1neg from B/model/LapTops.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:23,324 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:23,518 - INFO - Word2Vec lifecycle event {'fname': 'B/model/LapTops.w2v', 'datetime': '2024-05-02T14:16:23.518940', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:23,705 - INFO - Classification results by MLP
+2024-05-02 14:16:23,716 - INFO -               precision    recall  f1-score   support
+
+    conflict     0.1111    0.3333    0.1667         3
+    negative     0.4182    0.3651    0.3898       189
+     neutral     0.3441    0.1488    0.2078       215
+    positive     0.0891    0.2903    0.1364        62
+
+    accuracy                         0.2559       469
+   macro avg     0.2406    0.2844    0.2252       469
+weighted avg     0.3387    0.2559    0.2714       469
+
+2024-05-02 14:16:23,898 - INFO - loading Word2Vec object from B/model/Restaurants.w2v
+2024-05-02 14:16:23,904 - INFO - loading wv recursively from B/model/Restaurants.w2v.wv.* with mmap=None
+2024-05-02 14:16:23,904 - INFO - loading vectors from B/model/Restaurants.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:23,918 - INFO - loading syn1neg from B/model/Restaurants.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:23,932 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:24,073 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v', 'datetime': '2024-05-02T14:16:24.073680', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:24,598 - INFO - Classification results by cnn
+2024-05-02 14:16:24,598 - INFO - Gross Accuracy: 68.0217%
+2024-05-02 14:16:24,598 - INFO - Accuracy for label conflict: 8.00%
+2024-05-02 14:16:24,598 - INFO - Accuracy for label negative: 40.00%
+2024-05-02 14:16:24,598 - INFO - Accuracy for label neutral: 58.26%
+2024-05-02 14:16:24,598 - INFO - Accuracy for label positive: 83.26%
+2024-05-02 14:16:24,610 - INFO - loading Word2Vec object from B/model/LapTops.w2v
+2024-05-02 14:16:24,619 - INFO - loading wv recursively from B/model/LapTops.w2v.wv.* with mmap=None
+2024-05-02 14:16:24,619 - INFO - loading vectors from B/model/LapTops.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:24,638 - INFO - loading syn1neg from B/model/LapTops.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:24,657 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:24,854 - INFO - Word2Vec lifecycle event {'fname': 'B/model/LapTops.w2v', 'datetime': '2024-05-02T14:16:24.854946', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:25,093 - INFO - Classification results by cnn
+2024-05-02 14:16:25,093 - INFO - Gross Accuracy: 23.4542%
+2024-05-02 14:16:25,093 - INFO - Accuracy for label conflict: 0.00%
+2024-05-02 14:16:25,093 - INFO - Accuracy for label negative: 13.33%
+2024-05-02 14:16:25,093 - INFO - Accuracy for label neutral: 61.29%
+2024-05-02 14:16:25,093 - INFO - Accuracy for label positive: 15.35%
+2024-05-02 14:16:25,114 - INFO - loading Word2Vec object from B/model/Restaurants.w2v
+2024-05-02 14:16:25,121 - INFO - loading wv recursively from B/model/Restaurants.w2v.wv.* with mmap=None
+2024-05-02 14:16:25,121 - INFO - loading vectors from B/model/Restaurants.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:25,136 - INFO - loading syn1neg from B/model/Restaurants.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:25,150 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:25,302 - INFO - Word2Vec lifecycle event {'fname': 'B/model/Restaurants.w2v', 'datetime': '2024-05-02T14:16:25.302323', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:25,712 - INFO - Classification results by lstm
+2024-05-02 14:16:25,712 - INFO - Gross Accuracy: 68.8347%
+2024-05-02 14:16:25,712 - INFO - Accuracy for label conflict: 12.00%
+2024-05-02 14:16:25,712 - INFO - Accuracy for label negative: 53.33%
+2024-05-02 14:16:25,712 - INFO - Accuracy for label neutral: 43.48%
+2024-05-02 14:16:25,712 - INFO - Accuracy for label positive: 83.71%
+2024-05-02 14:16:25,727 - INFO - loading Word2Vec object from B/model/LapTops.w2v
+2024-05-02 14:16:25,736 - INFO - loading wv recursively from B/model/LapTops.w2v.wv.* with mmap=None
+2024-05-02 14:16:25,736 - INFO - loading vectors from B/model/LapTops.w2v.wv.vectors.npy with mmap=None
+2024-05-02 14:16:25,755 - INFO - loading syn1neg from B/model/LapTops.w2v.syn1neg.npy with mmap=None
+2024-05-02 14:16:25,773 - INFO - setting ignored attribute cum_table to None
+2024-05-02 14:16:25,964 - INFO - Word2Vec lifecycle event {'fname': 'B/model/LapTops.w2v', 'datetime': '2024-05-02T14:16:25.964468', 'gensim': '4.3.2', 'python': '3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22631-SP0', 'event': 'loaded'}
+2024-05-02 14:16:26,210 - INFO - Classification results by lstm
+2024-05-02 14:16:26,210 - INFO - Gross Accuracy: 24.7335%
+2024-05-02 14:16:26,210 - INFO - Accuracy for label conflict: 0.00%
+2024-05-02 14:16:26,210 - INFO - Accuracy for label negative: 53.33%
+2024-05-02 14:16:26,210 - INFO - Accuracy for label neutral: 16.13%
+2024-05-02 14:16:26,210 - INFO - Accuracy for label positive: 6.44%
